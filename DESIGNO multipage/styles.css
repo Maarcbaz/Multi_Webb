@@ -1,4 +1,8 @@
 /* GENERAL STYLING  */
+:root {
+    --PEACH: #E7816B;
+    --LIGHT-PEACH: #ffad9b
+}
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +12,12 @@
 body {
     min-height: 100%;
     display: flex;
-    /* font-size: clamp(1rem, 9vw + 1rem, 1rem); */
     flex-direction: column;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 /* NAVIGATION STYLING  */
@@ -57,64 +65,66 @@ nav a:focus {
 }
 
 /* HERO  */
-.hero {
-    max-width: 1400px;
-    margin: 6rem auto;
-    background-color: #E7816B;
-    height: 640px;
-    position: relative;
-    height: 640px;
-    width: 1200px;
-    border-radius: 15px;
-}
-
-.hero .oval-1 {
-    float: right;
-    top: -345px;
-    position: relative;
-}
-
-.iphone {
-    margin-left: 750px;
-    bottom: 0;
-    position: absolute;
-}
-
-.hero_content {
-    width: 560px;
-    top: 200px;
+.header-hero {
     display: flex;
-    flex-direction: column;
+    margin: 7rem auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    height: 600px;
+    background: #E7816B;
     position: relative;
-    gap: 1.5rem;
-    padding: 10px 30px;
+    overflow: hidden;
+    padding: 30px 50px;
+}
+
+.hero-content {
+    width: 45%;
+    display: flex;
     color: #fff;
+    gap: 2rem;
+    padding-top: 10rem;
+    flex-direction: column;
 }
-
-.hero_content h2 {
-    font-weight: 500;
-    line-height: 48px;
-    font-size: 2.6rem;
+.hero-content h2 {
+    font-size: clamp(2rem, 9vw, 40px);
 }
-
-.hero_content p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 26px;
+.hero-content p {
+    font-size: clamp(1rem, 9vw, 16px);
 }
-
 .btn {
+    padding: 10px 16px;
+    background-color: #ffad9b;
+    border-radius: 5px;
     color: #fff;
-    border-radius: 8px;
-    background: #FFAD9B;
-    width: 140px;
-    height: 56px;
     border: none;
+    width: 25%;
+    font-size: clamp(.6rem, 9vw, 1rem);
     cursor: pointer;
-    font-size: 1rem;
-    text-transform: uppercase;
 }
 .btn:hover {
-    background: #FFAD9B;
+    background-color: #ffad9b;
     filter: brightness(110%);
+}
+.oval {
+    margin-left: 47px;
+    margin-top: -30px;
+    margin-bottom: 65px;
+}
+.hero-img img:nth-child(2) {
+    margin-top: -720px;
+    margin-left: 250px;
+    z-index: 1;
+}
+@media screen and (max-width: 1000px)  {
+    .header-hero {
+        flex-direction: column;
+        height: 500px;
+        margin: 6rem auto;
+        padding: 0 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-hero img {
+        display: none;
+    }
 }
