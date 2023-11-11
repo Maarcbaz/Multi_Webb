@@ -87,11 +87,13 @@ nav a:focus {
 /* MEDIA QUERIES */
 /* MOBILE VIEW  */
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 480px) {
     .header-hero {
         background: #E7816B;
-        height: 650px;
+        height: 700px;
+        overflow: hidden;
         position: relative;
+       max-width: clamp(300px, 100vw, 480px);
     }
 
     .nav-link {
@@ -99,7 +101,7 @@ nav a:focus {
     }
 
     .logo-img {
-        padding-left: 10px;
+        padding-left: 7%;
     }
 
     nav {
@@ -109,7 +111,7 @@ nav a:focus {
 
     .bar {
         display: block;
-        padding-right: 25px;
+        padding-right: 17%;
         padding-top: 15px;
         color: #000;
         font-weight: 800;
@@ -117,10 +119,9 @@ nav a:focus {
 
     .hero-content {
         text-align: center;
-        margin-top: 2rem;
-        margin: 2rem 1rem;
+        margin: 2rem auto;
         align-items: center;
-        z-index: 100;
+        z-index: 1000;
     }
 
     .hero-content h2 {
@@ -154,15 +155,18 @@ nav a:focus {
         position: absolute;
         right: 20px;
         bottom: 10px;
-        width: 640px;
+        width: 600px;
         height: 600px;
     }
+
     .iphone {
-        position: relative;
-        top: -70px;
-        height: 400px;
-        display: flex;
+        position: absolute;
+        display: flex !important;
         justify-content: center;
+        margin-top: -25%;
         align-items: center;
+        margin-left: -47%;
     }
 }
+
+@media screen and (max-width: 900px) {}
