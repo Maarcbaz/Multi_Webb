@@ -1,7 +1,12 @@
 /* GENERAL STYLING  */
 :root {
     --PEACH: #E7816B;
-    --LIGHT-PEACH: #ffad9b
+    --LIGHT-PEACH: #ffad9b;
+    --SLIGHT_BLACK: #1D1C1E;
+    --LIGHT_GRAY:  #1D1C1E;
+    --GREY: #1D1C1E;
+    --BLACK: #000;
+    --WHITE: #fff;
 }
 
 * {
@@ -11,7 +16,7 @@
 }
 
 body {
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -21,16 +26,21 @@ img {
     max-width: 100%;
 }
 
+header,
+main {
+    max-width: 1400px;
+    margin: .7rem auto;
+}
+
 /* NAVIGATION STYLING  */
+
 nav .container {
-    margin: auto;
-    height: 50px;
+    height: 40px;
     display: flex;
-    width: 100%;
-    top: 0;
-    left: 0;
+    gap: 24px;
     z-index: 1;
     justify-content: space-between;
+    font-size: .8em;
     align-items: center;
 }
 
@@ -41,6 +51,12 @@ nav .container {
     list-style: none;
 }
 
+
+nav a:hover,
+nav a:focus {
+    color: var(--BLACK);
+}
+/* UTILITY CLASSES */
 .bar {
     display: none;
 }
@@ -51,20 +67,18 @@ nav a {
 }
 
 .nav-link a {
-    color: #00000097;
-    padding: 0 40px;
+    color: hsla(0, 0%, 0%, 0.592);
+    padding: 0 25px;
 }
 
 .logo-img {
     display: flex;
     gap: .5rem;
-    padding: 0 50px;
     z-index: 1;
 }
 
-nav a:hover,
-nav a:focus {
-    color: #000;
+.nav-icon {
+    padding-top: 8.5px;
 }
 
 /* HERO  */
@@ -73,100 +87,50 @@ nav a:focus {
     display: flex;
 }
 
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-    gap: 1rem;
-}
-
 .btn {
     cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 15px;
+}
+.btn-1 {
+    background-color: var(--LIGHT-PEACH);
+}
+.btn-1:hover {
+    filter: brightness(90%);
+}
+.header-hero {
+    display: flex;
+    color: var(--BLACK);
 }
 
-/* MEDIA QUERIES */
 /* MOBILE VIEW  */
 
-@media screen and (max-width: 480px) {
-    .header-hero {
-        background: #E7816B;
-        height: 670px;
-        overflow: hidden;
-        position: relative;
-       max-width: clamp(300px, 100vw, 480px);
-    }
-
+@media screen and (max-width: 560px) {
+    /* MOBILE NAVIGATION */
     .nav-link {
         display: none;
     }
+    header {
+        
+    }
 
     .logo-img {
-        padding-left: 7%;
+        padding-left: 20px;
     }
 
     nav {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
     .bar {
         display: block;
-        padding-right: 10%;
-        padding-top: 15px;
+        padding-right: 6%;
+        padding-top: -15px;
         color: #000;
         font-weight: 800;
+        font-size: 25px;
     }
 
-    .hero-content {
-        text-align: center;
-        margin: 2rem auto;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    .hero-content h2 {
-        font-size: 1.8rem;
-        font-weight: 500;
-    }
-
-    .hero-content p {
-        font-weight: 400;
-        font-size: 1rem;
-    }
-
-    .btn-1 {
-        background-color: #fff;
-        color: #000;
-        border: none;
-        border-radius: 8px;
-        padding: 10px 20px;
-        height: 50px;
-        text-transform: uppercase;
-    }
-
-    .btn-1:hover {
-        background-color: #ddd;
-    }
-
-    .hero-img {
-        border-radius: 640px;
-        opacity: 0.3089;
-        background: linear-gradient(90deg, rgba(93, 2, 2, 0.00) 0%, rgba(93, 2, 2, 0.50) 100%);
-        position: absolute;
-        right: 20px;
-        bottom: 10px;
-        width: 600px;
-        height: 600px;
-    }
-
-    .iphone {
-        position: absolute;
-        display: flex !important;
-        justify-content: center;
-        margin-top: -25%;
-        align-items: center;
-        margin-left: -47%;
-    }
 }
-
-@media screen and (max-width: 900px) {}
