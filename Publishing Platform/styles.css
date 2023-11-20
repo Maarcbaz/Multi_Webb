@@ -2,16 +2,19 @@
 body {
     min-height: 100vh;
     display: flex;
+    padding: 0;
+    margin: 0;
     flex-direction: column;
 }
 
 img {
-    display: block;
+    /* display: block; */
     max-width: 100%;
 }
 
 /* VARIABLES  */
 :root {
+    /* COLORS    */
     --LIGHT-RED: hsl(356, 100%, 66%);
     --LIGHTER-RED: hsl(355, 100%, 74%);
     --DARK-BLUE: hsl(208, 49%, 24%);
@@ -23,4 +26,85 @@ img {
     --LIGHT-RED: hsl(353, 100%, 62%);
     --DARKER-GRAY-BLUE: hsl(237, 17%, 21%);
     --DARK-SATURATED-BLUE: hsl(237, 23%, 32%);
+}
+
+/* NAV  */
+header {
+    background-color: var(--LIGHTER-RED);
+    padding: 20px 5%;
+    height: 70vh;
+    border-radius: 0 0 0 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-img {
+    max-width: 1200px;
+    position: absolute;
+    top: -115px;
+    left: -0px;
+}
+
+.topnav {
+    display: flex;
+    gap: 4rem;
+}
+
+
+.dropdown {
+    display: inline-block;
+
+}
+
+.dropdown-link {
+    display: none;
+    position: absolute;
+    background-color: green;
+    z-index: 1;
+    width: 100%;
+}
+
+.dropdown-link:hover,
+.dropdown{
+    display: block;
+}
+
+a {
+    cursor: pointer;
+}
+
+.dd {
+    display: inline-block;
+    position: relative;
+}
+
+.dd-btn {
+    border: none;
+    text-align: center;
+    background-color: blueviolet;
+    width: 300px;
+    color: wheat;
+    padding: 12px;
+}
+
+.dd-content {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 0px;
+    transition: height .5s;
+    box-shadow: 10px 0px 20px black;
+}
+
+.dd:hover>.dd-content {
+    height: 200px;
+    display: block;
+}
+
+.dd-content>a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
 }
