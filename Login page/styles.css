@@ -1,0 +1,35 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: hsla(0, 0%, 87%, 0.694);
+    outline: none;
+    border: none;
+    max-width: 500px;
+    background-color: #112232;
+    padding: 12px 24px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input:invalid {
+    background-color: tomato;
+}
+input:valid {
+    background-color: aliceblue;
+}
+button {
+    border: none;
+    color: red;
+    ;
+}
